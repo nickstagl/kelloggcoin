@@ -27,3 +27,39 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+# make variables for each person
+ct_br = 0
+ct_bn = 0
+ct_ev = 0
+ct_an = 0
+
+# loop through each i hash in blockchain
+for i in blockchain
+  #subtract the amount from user looking at each name
+  if i["from_user"] == "brian"
+    ct_br = ct_br - i["amount"]
+  elsif i["from_user"] == "ben"
+    ct_bn = ct_bn - i["amount"]
+  elsif i["from_user"] == "evan"
+  ct_ev = ct_ev - i["amount"]
+  elsif i["from_user"] == "anthony"
+    ct_an = ct_an - i["amount"]
+  end
+
+  #add the amount to user looking at each name
+  if i["to_user"] == "brian"
+    ct_br = ct_br + i["amount"]
+  elsif i["to_user"] == "ben"
+    ct_bn = ct_bn + i["amount"]
+  elsif i["to_user"] == "evan"
+  ct_ev = ct_ev + i["amount"]
+  elsif i["to_user"] == "anthony"
+    ct_an = ct_an + i["amount"]
+  end
+end
+
+#print statements
+puts "Ben's KelloggCoin balance is #{ct_bn}"
+puts "Brian's KelloggCoin balance is #{ct_br}"
+puts "Evan's KelloggCoin balance is #{ct_ev}"
+puts "Anthony's KelloggCoin balance is #{ct_an}"
